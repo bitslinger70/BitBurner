@@ -14,8 +14,8 @@ export async function main(ns) {
 		var ma = ns.getServerMoneyAvailable(sn);
 		var pr = ns.getServerNumPortsRequired(sn);
 		var hl = ns.getServerRequiredHackingLevel(sn);
-		var hm = ns.hackAnalyze(sn) * ma /ht;
-		var mmpx = mm/ma;
+		var hm = ns.hackAnalyze(sn) * ma / ht;
+		var mmpx = mm / ma;
 		if(mmpx == 0 || isNaN(mmpx)){mmpx = 1}
 		var ga = ns.growthAnalyze(sn,mmpx,1);
 		if (ns.getHackingLevel() >= hl){
