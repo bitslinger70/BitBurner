@@ -18,7 +18,6 @@ export async function main(ns) {
 		var mmpx = mm/ma;
 		if(mmpx == 0 || isNaN(mmpx)){mmpx = 1}
 		var ga = ns.growthAnalyze(sn,mmpx,1);
-		var wa = ns.weakenAnalyze(1,1);
 		if (ns.getHackingLevel() >= hl){
 			ns.tprintf("%20s %12.2f %12.2f %12.2f %16.2f %16.2f %6d %6d %5d %9d %9.2f %9d\n",sn,gt,ht,wt,mm,ma,mr,ms,pr,hl,hm,ga)
 		}
