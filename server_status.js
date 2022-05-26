@@ -1,15 +1,7 @@
 /** @param {NS} ns */
-export async function main(ns) {
-	var all_servers = ["home"];
-	var servers = ns.scan();
-	while (servers.length > 0){
-		var c_server = servers.shift();
-		if(!all_servers.includes(c_server)){
-			all_servers.push(c_server);
-			var subscan = ns.scan(c_server);
-			servers = servers.concat(subscan);
-		}
-	}
+export async function main(ns) {	
+	var tmp = ns.read("all_servers.txt");
+	var all_servers = tmp.split(",");
 	ns.tprintf("%20s %12s %12s %12s %16s %16s %6s %6s %5s %9s\n","Server","GrowTime","HackTime","WeakenTime","MaxMoney","Money","MaxRam","MinSec","Ports","HackLevel");
 	for(var index in all_servers){
 		var sn = all_servers[index];
